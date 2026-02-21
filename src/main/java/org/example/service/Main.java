@@ -1,4 +1,7 @@
-package org.example;
+package org.example.service;
+
+import org.example.model.Courses;
+import org.example.model.Student;
 
 public class Main {
     public static void main(String[] args){
