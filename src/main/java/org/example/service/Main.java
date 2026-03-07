@@ -5,16 +5,16 @@ import org.example.model.Student;
 
 public class Main {
     public static void main(String[] args){
-        Student s = new Student();
-        Student s1 = new Student();
+        Student s = new Student("caryl", "1001", "IT");
+        Student s1 = new Student("bob", "90", "it");
         Courses p = new Courses();
 
-        s.setStudentID(2024374351);
-        s.setStudentName("EM");
+        s.setPersonID("024374351");
+        s.setPersonName("EM");
         s.setStudentProgram("Information Technology");
 
-        s1.setStudentID(14554587);
-        s1.setStudentName("Mawel");
+        s1.setPersonID("455458");
+        s1.setPersonName("Mawel");
         s1.setStudentProgram("IT");
 
         p.setCourseID(15151515);
