@@ -22,4 +22,8 @@ public class Instructor extends Person {
     }
 
 
+    @Override
+    public void mainTask() {
+
+    }
 }

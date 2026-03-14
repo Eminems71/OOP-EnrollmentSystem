@@ -33,9 +33,9 @@ public class StudentRegistration {
         for (int i = 0; i < studentLists.size(); i++) {
             studentLists.remove(i);
             break;
-        }
+          }
     }
-  }
+}
 
 
 
