@@ -1,30 +1,44 @@
 package org.example.model;
 
-public class Student extends Person{
+import java.util.ArrayList;
+import java.util.List;
 
+public class Student extends Person {
+
+    private String studentId;
     private String studentProgram;
+    private List<Courses> enrolledCourses;
 
-
-    public Student(String personName, String personID, String studentProgram){
-        super(personName, personID);
+    public Student(String personName, String personId, String studentId, String studentProgram) {
+        super(personName, personId);
+        this.studentId = studentId;
         this.studentProgram = studentProgram;
+        this.enrolledCourses = new ArrayList<>();
     }
 
-     public String getStudentProgram(){
-        return studentProgram;
-
-     }
-     public void setStudentProgram(String studentProgram){
-        this.studentProgram = studentProgram;
-     }
-
-     public void display(){
-
-         System.out.println("Student Program: " + getStudentProgram() + "\n");
-     }
 
     @Override
     public void mainTask() {
-        System.out.println("Student Enrolled");
+        System.out.println("Student is attending classes.");
+    }
+
+    public String getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
+    }
+
+    public String getStudentProgram() {
+        return studentProgram;
+    }
+
+    public void setStudentProgram(String studentProgram) {
+        this.studentProgram = studentProgram;
+    }
+
+    public List<Courses> getEnrolledCourses() {
+        return enrolledCourses;
     }
 }
