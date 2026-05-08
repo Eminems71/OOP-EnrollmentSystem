@@ -8,4 +8,5 @@ public interface ICourseService {
     void updateCourse(Courses course);
     void removeCourse(int courseID);
     List<Courses> getAllCourses();
+    Courses getCourseById(int courseID);
 }

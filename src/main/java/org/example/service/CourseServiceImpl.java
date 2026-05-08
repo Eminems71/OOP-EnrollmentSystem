@@ -24,11 +24,21 @@ public class CourseServiceImpl implements ICourseService {
 
     @Override
     public void removeCourse(int courseID) {
-        courses.removeIf(c -> c.getCourseID() == courseID);
+        courses.removeIf(course -> course.getCourseID() == courseID);
     }
 
     @Override
     public List<Courses> getAllCourses() {
         return courses;
+    }
+
+    @Override
+    public Courses getCourseById(int courseID) {
+        for (Courses course : courses) {
+            if (course.getCourseID() == courseID) {
+                return course;
+            }
+        }
+        return null;
     }
 }

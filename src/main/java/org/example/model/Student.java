@@ -5,13 +5,12 @@ import java.util.List;
 
 public class Student extends Person {
 
-    private String studentId;
     private String studentProgram;
     private List<Courses> enrolledCourses;
+    private double balance = 0.0;
 
-    public Student(String personName, String personId, String studentId, String studentProgram) {
+    public Student(String personName, String personId, String password, String studentProgram) {
         super(personName, personId);
-        this.studentId = studentId;
         this.studentProgram = studentProgram;
         this.enrolledCourses = new ArrayList<>();
     }
@@ -21,12 +20,27 @@ public class Student extends Person {
         System.out.println("Student " + getPersonName() + " is attending classes.");
     }
 
-    public String getFirstName() { return getPersonName(); }
-    public String getLastName() { return getPersonName(); }
+    public String getStudentId() {
+        return getPersonID();
+    }
 
-    public String getStudentId() { return studentId; }
-    public void setStudentId(String studentId) { this.studentId = studentId; }
-    public String getStudentProgram() { return studentProgram; }
-    public void setStudentProgram(String studentProgram) { this.studentProgram = studentProgram; }
-    public List<Courses> getEnrolledCourses() { return enrolledCourses; }
+    public String getStudentProgram() {
+        return studentProgram;
+    }
+
+    public void setStudentProgram(String studentProgram) {
+        this.studentProgram = studentProgram;
+    }
+
+    public List<Courses> getEnrolledCourses() {
+        return enrolledCourses;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
 }

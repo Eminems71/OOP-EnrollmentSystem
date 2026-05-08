@@ -7,4 +7,5 @@ public interface IStudentService {
     void displayAllStudents();
     void updateStudent(String studentId, String newName, String newProgram);
     void removeStudent(String studentId);
+    Student getStudentById(String studentId);
 }

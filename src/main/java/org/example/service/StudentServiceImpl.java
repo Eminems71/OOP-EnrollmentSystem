@@ -44,4 +44,14 @@ public class StudentServiceImpl implements IStudentService {
             System.out.println("Student ID not found.");
         }
     }
+
+    @Override
+    public Student getStudentById(String studentId) {
+        for (Student s : Database.students) {
+            if (s.getPersonID().equals(studentId)) {
+                return s;
+            }
+        }
+        return null;
+    }
 }
