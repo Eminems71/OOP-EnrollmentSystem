@@ -73,20 +73,46 @@ public class Main {
                     break;
 
                 case 2:
+                    System.out.println("\n--- Instructor Management ---");
+                    System.out.println("1. Register Instructor");
+                    System.out.println("2. Display All Instructors");
+                    System.out.println("3. Update Instructor");
+                    System.out.println("4. Remove Instructor");
+                    System.out.print("Select Action: ");
+
+                    int instructorChoice = sc.nextInt();
                     sc.nextLine();
-                    System.out.println("\n--- Instructor Registration ---");
-                    System.out.print("Enter Full Name: ");
-                    String iName = sc.nextLine();
-                    System.out.print("Enter Employee ID: ");
-                    String eId = sc.nextLine();
-                    System.out.print("Enter Department: ");
-                    String dept = sc.nextLine();
 
-                    Instructor newInstructor = new Instructor(iName, eId, eId, dept);
-                    instructorService.addInstructor(newInstructor);
+                    if (instructorChoice == 1) {
+                        System.out.print("Enter Full Name: ");
+                        String iName = sc.nextLine();
+                        System.out.print("Enter Employee ID: ");
+                        String eId = sc.nextLine();
+                        System.out.print("Enter Department: ");
+                        String dept = sc.nextLine();
 
-                    System.out.println("\n--- Registered Details ---");
-                    instructorService.getInstructorDetails(newInstructor);
+                        instructorService.addInstructor(new Instructor(iName, eId, eId, dept));
+
+                    } else if (instructorChoice == 2) {
+                        instructorService.displayAllInstructors();
+
+                    } else if (instructorChoice == 3) {
+                        System.out.print("Enter Instructor ID to update: ");
+                        String id = sc.nextLine();
+                        System.out.print("Enter New Name: ");
+                        String nName = sc.nextLine();
+                        System.out.print("Enter New Department: ");
+                        String nDept = sc.nextLine();
+                        instructorService.updateInstructor(id, nName, nDept);
+
+                    } else if (instructorChoice == 4) {
+                        System.out.print("Enter Instructor ID to remove: ");
+                        String id = sc.nextLine();
+                        instructorService.removeInstructor(id);
+
+                    } else {
+                        System.out.println("Invalid action!");
+                    }
                     break;
 
                 case 0:

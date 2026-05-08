@@ -1,8 +1,7 @@
 package org.example.service;
 
-import org.example.model.Instructor;
-import org.example.model.Section;
 import org.example.model.Database;
+import org.example.model.Instructor;
 
 public class InstructorServiceImpl implements IInstructorService {
 
@@ -13,16 +12,37 @@ public class InstructorServiceImpl implements IInstructorService {
     }
 
     @Override
-    public void assignInstructorToSection(Instructor instructor, Section section) {
-
-        System.out.println("Assigning " + instructor.getPersonName() + " to section");
+    public void displayAllInstructors() {
+        if (Database.instructors.isEmpty()) {
+            System.out.println("No instructors found in the database.");
+            return;
+        }
+        System.out.println("\n--- Instructor List ---");
+        for (Instructor i : Database.instructors) {
+            System.out.println("ID: " + i.getPersonID() + " | Name: " + i.getPersonName() + " | Dept: " + i.getDepartment());
+        }
     }
 
     @Override
-    public void getInstructorDetails(Instructor instructor) {
-        System.out.println("ID: " + instructor.getEmployeeId());
+    public void updateInstructor(String instructorId, String newName, String newDept) {
+        for (Instructor i : Database.instructors) {
+            if (i.getPersonID().equals(instructorId)) {
+                i.setPersonName(newName);
+                i.setDepartment(newDept);
+                System.out.println("Instructor updated successfully!");
+                return;
+            }
+        }
+        System.out.println("Instructor with ID " + instructorId + " not found.");
+    }
 
-        System.out.println("Name: " + instructor.getPersonName());
-        System.out.println("Department: " + instructor.getDepartment());
+    @Override
+    public void removeInstructor(String instructorId) {
+        boolean removed = Database.instructors.removeIf(i -> i.getPersonID().equals(instructorId));
+        if (removed) {
+            System.out.println("Instructor removed successfully!");
+        } else {
+            System.out.println("Instructor with ID " + instructorId + " not found.");
+        }
     }
 }

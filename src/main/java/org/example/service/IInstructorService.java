@@ -1,10 +1,10 @@
 package org.example.service;
 
 import org.example.model.Instructor;
-import org.example.model.Section;
 
 public interface IInstructorService {
     void addInstructor(Instructor instructor);
-    void assignInstructorToSection(Instructor instructor, Section section);
-    void getInstructorDetails(Instructor instructor);
+    void displayAllInstructors();
+    void updateInstructor(String instructorId, String newName, String newDept);
+    void removeInstructor(String instructorId);
 }
