@@ -1,6 +1,5 @@
-package org.example.service;
+package org.example.model;
 
-import org.example.model.*;
 import java.util.ArrayList;
 import java.util.List;
 

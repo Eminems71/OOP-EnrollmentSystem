@@ -1,35 +1,33 @@
 package org.example.model;
 
 public class Instructor extends Person {
-    private String firstName;
-    private String lastName;
-    private String courseName;
+    private String employeeId;
+    private String department;
 
-    public Instructor(String firstName, String lastName, String personID, String courseName) {
-        super(firstName + " " + lastName, personID);
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.courseName = courseName;
+    public Instructor(String name, String personId, String employeeId, String department) {
+        super(name, personId);
+        this.employeeId = employeeId;
+        this.department = department;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getEmployeeId() {
+        return employeeId;
     }
 
-    public String getLastName() {
-        return lastName;
+    public void setEmployeeId(String employeeId) {
+        this.employeeId = employeeId;
     }
 
-    public String getCourseName() {
-        return courseName;
+    public String getDepartment() {
+        return department;
     }
 
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
+    public void setDepartment(String department) {
+        this.department = department;
     }
 
     @Override
     public void mainTask() {
-        System.out.println("Teaching: " + courseName);
+        System.out.println("Teaching in department: " + department);
     }
 }
