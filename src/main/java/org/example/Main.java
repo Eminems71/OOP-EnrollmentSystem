@@ -7,23 +7,19 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        IStudentService studentService = new StudentServiceImpl();
         boolean running = true;
 
         while (running) {
             System.out.println("\n===========================================");
-            System.out.println("==============ENROLLMENT SYSTEM============== ");
+            System.out.println("==============ENROLLMENT SYSTEM==============");
             System.out.println("=============================================");
-            System.out.println("1. Student Management (CRUD)");
-            System.out.println("2. Instructor Management (CRUD)");
-            System.out.println("3. Course Management (CRUD)");
-            System.out.println("4. Enrollment & Capacity Check");
-            System.out.println("5. Tuition Management");
-            System.out.println("6. View Institutional Hierarchy");
+            System.out.println("1. Student Management");
             System.out.println("0. Exit Program");
             System.out.print("\nSelect Option: ");
 
             if (!sc.hasNextInt()) {
-                System.out.println("Invalid input! Please enter a number.");
+                System.out.println("Invalid input!");
                 sc.next();
                 continue;
             }
@@ -32,12 +28,30 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                    System.out.println("\n[Student Management Mode]");
+                    sc.nextLine();
+                    System.out.println("\n--- Student Registration ---");
+
+                    System.out.print("Enter Full Name: ");
+                    String name = sc.nextLine();
+
+                    System.out.print("Enter Student ID: ");
+                    String sId = sc.nextLine();
+
+                    System.out.print("Enter Program: ");
+                    String program = sc.nextLine();
+
+
+                    Student newStudent = new Student(name, sId, sId, program);
+
+                    studentService.addStudent(newStudent);
+                    studentService.displayAllStudents();
                     break;
+
                 case 0:
                     running = false;
                     System.out.println("System shutting down... Goodbye!");
                     break;
+
                 default:
                     System.out.println("Option not available.");
             }
