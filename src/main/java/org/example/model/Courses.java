@@ -5,6 +5,8 @@ public class Courses {
     private String courseName;
     private String courseProgram;
     private int units;
+    private int maxCapacity = 30;
+    private int enrolledCount = 0;
 
     public Courses() {}
 
@@ -27,10 +29,17 @@ public class Courses {
     public int getUnits() { return units; }
     public void setUnits(int units) { this.units = units; }
 
+    public int getMaxCapacity() { return maxCapacity; }
+    public void setMaxCapacity(int maxCapacity) { this.maxCapacity = maxCapacity; }
+
+    public int getEnrolledCount() { return enrolledCount; }
+    public void setEnrolledCount(int enrolledCount) { this.enrolledCount = enrolledCount; }
+
     public void display() {
         System.out.println("Course ID: " + courseID);
         System.out.println("Course Name: " + courseName);
         System.out.println("Course Program: " + courseProgram);
-        System.out.println("Units: " + units + "\n");
+        System.out.println("Units: " + units);
+        System.out.println("Slots: " + enrolledCount + "/" + maxCapacity + "\n");
     }
 }

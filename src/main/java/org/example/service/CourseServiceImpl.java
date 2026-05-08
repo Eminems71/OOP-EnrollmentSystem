@@ -13,12 +13,18 @@ public class CourseServiceImpl implements ICourseService {
     }
 
     @Override
-    public void updateCourse(Courses course) {
+    public void updateCourse(Courses updatedCourse) {
+        for (int i = 0; i < courses.size(); i++) {
+            if (courses.get(i).getCourseID() == updatedCourse.getCourseID()) {
+                courses.set(i, updatedCourse);
+                return;
+            }
+        }
     }
 
     @Override
-    public void removeCourse(Courses course) {
-        courses.remove(course);
+    public void removeCourse(int courseID) {
+        courses.removeIf(c -> c.getCourseID() == courseID);
     }
 
     @Override
