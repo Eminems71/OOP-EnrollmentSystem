@@ -16,29 +16,17 @@ public class Student extends Person {
         this.enrolledCourses = new ArrayList<>();
     }
 
-
     @Override
     public void mainTask() {
-        System.out.println("Student is attending classes.");
+        System.out.println("Student " + getPersonName() + " is attending classes.");
     }
 
-    public String getStudentId() {
-        return studentId;
-    }
+    public String getFirstName() { return getPersonName(); }
+    public String getLastName() { return getPersonName(); }
 
-    public void setStudentId(String studentId) {
-        this.studentId = studentId;
-    }
-
-    public String getStudentProgram() {
-        return studentProgram;
-    }
-
-    public void setStudentProgram(String studentProgram) {
-        this.studentProgram = studentProgram;
-    }
-
-    public List<Courses> getEnrolledCourses() {
-        return enrolledCourses;
-    }
+    public String getStudentId() { return studentId; }
+    public void setStudentId(String studentId) { this.studentId = studentId; }
+    public String getStudentProgram() { return studentProgram; }
+    public void setStudentProgram(String studentProgram) { this.studentProgram = studentProgram; }
+    public List<Courses> getEnrolledCourses() { return enrolledCourses; }
 }

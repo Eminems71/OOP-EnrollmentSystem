@@ -1,30 +1,27 @@
 package org.example.model;
 
 public class TuitionFeePayment {
-    private final double PRICE_PER_UNIT = 1000;
     private double balance;
     private double totalTuitionFee;
 
-    public double calculateTuitionFee(int units, double discountRate){
-        totalTuitionFee = units * PRICE_PER_UNIT;
+    public TuitionFeePayment(double totalTuitionFee, double balance) {
+        this.totalTuitionFee = totalTuitionFee;
+        this.balance = balance;
+    }
 
-        if(discountRate !=0){
-            totalTuitionFee = totalTuitionFee - (totalTuitionFee * discountRate);
+    public double getBalance() {
+        return balance;
+    }
 
-        }
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public double getTotalTuitionFee() {
         return totalTuitionFee;
+    }
 
-        }
-
-        public void makePayment(double amount){
-            balance = totalTuitionFee - amount;
-
-        }
-
-        public double getBalance() {
-            return balance;
-        }
-        public boolean isFullyPaid(){
-            return balance == 0 ? true : false;
+    public void setTotalTuitionFee(double totalTuitionFee) {
+        this.totalTuitionFee = totalTuitionFee;
     }
 }

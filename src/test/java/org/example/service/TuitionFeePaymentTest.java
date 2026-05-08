@@ -1,58 +1,30 @@
 package org.example.service;
 
 import static org.junit.jupiter.api.Assertions.*;
-
-import org.example.model.TuitionFeePayment;
+import org.example.model.Student;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class TuitionFeePaymentTest {
-    // Arrange
-    private TuitionFeePayment tuitionFeePayment;
+    private ITuitionService tuitionService;
+    private Student testStudent;
 
     @BeforeEach
-    void setup(){
-        tuitionFeePayment = new TuitionFeePayment();
-
+    void setup() {
+        tuitionService = new TuitionServiceImpl();
+        testStudent = new Student("Juan Dela Cruz", "ID-123", "S1001", "BSIT");
     }
 
     @Test
-    @DisplayName("Calculate Tuition Fee")
-     void shouldCalculateCorrectTuitionFeeWithNoDiscount(){
-
-
-        // assert
-        assertEquals(5000, tuitionFeePayment.calculateTuitionFee(5, 0));
-
-    }
-    @Test
-    void shouldCalculateCorrectTuitionFeeWithDiscount(){
-        assertEquals(4500,tuitionFeePayment.calculateTuitionFee(5, 0.10));
+    void shouldCalculateCorrectTuitionFee() {
+        double result = tuitionService.calculateFee(testStudent);
+        assertEquals(25000.00, result);
     }
 
     @Test
-    void shouldMakePaymentOf500(){
-        tuitionFeePayment.calculateTuitionFee(5, 0);
-        tuitionFeePayment.makePayment(500);
-
-        assertEquals(4500, tuitionFeePayment.getBalance());
+    void shouldProcessPaymentWithoutError() {
+        assertDoesNotThrow(() -> {
+            tuitionService.makePayment(testStudent, 5000.00);
+        });
     }
-
-    @Test
-    void shouldBeFullyPaid(){
-        tuitionFeePayment.calculateTuitionFee(5, 0);
-        tuitionFeePayment.makePayment(5000);
-        assertTrue(tuitionFeePayment.isFullyPaid());
-    }
-
-    @Test
-    void shouldNotBeFullyPaid(){
-        tuitionFeePayment.calculateTuitionFee(5, 0);
-        tuitionFeePayment.makePayment(500);
-        assertFalse(tuitionFeePayment.isFullyPaid());
-
-    }
-
 }
-

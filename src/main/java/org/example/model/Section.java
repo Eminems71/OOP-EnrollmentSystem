@@ -2,8 +2,8 @@ package org.example.model;
 
 import java.util.ArrayList;
 import java.util.List;
-public class Section {
 
+public class Section {
     private String sectionCode;
     private int maxCapacity;
     private Instructor instructor;
@@ -16,6 +16,7 @@ public class Section {
     }
 
     public String getSectionCode() { return sectionCode; }
+    public String getSectionName() { return sectionCode; }
     public int getMaxCapacity() { return maxCapacity; }
     public Instructor getInstructor() { return instructor; }
     public List<Student> getEnrolledStudents() { return enrolledStudents; }
@@ -24,4 +25,3 @@ public class Section {
     public void setMaxCapacity(int maxCapacity) { this.maxCapacity = maxCapacity; }
     public void setInstructor(Instructor instructor) { this.instructor = instructor; }
 }
-
