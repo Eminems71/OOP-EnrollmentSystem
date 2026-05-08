@@ -5,6 +5,7 @@ public class Courses {
     private String courseName;
     private String courseProgram;
 
+
     public Courses() {
 
     }

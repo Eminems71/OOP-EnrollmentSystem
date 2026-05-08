@@ -16,9 +16,13 @@ public class Section {
     }
 
     public String getSectionCode() { return sectionCode; }
+
     public String getSectionName() { return sectionCode; }
+
     public int getMaxCapacity() { return maxCapacity; }
+
     public Instructor getInstructor() { return instructor; }
+
     public List<Student> getEnrolledStudents() { return enrolledStudents; }
 
     public void setSectionCode(String sectionCode) { this.sectionCode = sectionCode; }
