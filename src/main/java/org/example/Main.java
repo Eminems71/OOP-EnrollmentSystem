@@ -27,184 +27,131 @@ public class Main {
             System.out.println("0. Exit Program");
             System.out.print("\nSelect Option: ");
 
-            if (!sc.hasNextInt()) {
-                System.out.println("Invalid input!");
-                sc.next();
+            String input = sc.nextLine();
+            int choice;
+
+            try {
+                choice = Integer.parseInt(input);
+            } catch (Exception e) {
+                System.out.println("Invalid input! Numbers only.");
                 continue;
             }
-
-            int choice = sc.nextInt();
 
             switch (choice) {
                 case 1:
                     System.out.println("\n--- Student Management ---");
-                    System.out.println("1. Register Student");
-                    System.out.println("2. Display All Students");
-                    System.out.println("3. Update Student");
-                    System.out.println("4. Remove Student");
+                    System.out.println("1. Register Student\n2. Display All Students\n3. Update Student\n4. Remove Student");
                     System.out.print("Select Action: ");
-                    int studentChoice = sc.nextInt();
-                    sc.nextLine();
-
-                    if (studentChoice == 1) {
-                        System.out.print("Enter Full Name: ");
-                        String name = sc.nextLine();
-                        System.out.print("Enter Student ID: ");
-                        String sId = sc.nextLine();
-                        System.out.print("Enter Program: ");
-                        String program = sc.nextLine();
-                        studentService.addStudent(new Student(name, sId, sId, program));
-                    } else if (studentChoice == 2) {
-                        studentService.displayAllStudents();
-                    } else if (studentChoice == 3) {
-                        System.out.print("Enter ID to update: ");
-                        String id = sc.nextLine();
-                        System.out.print("New Name: ");
-                        String nName = sc.nextLine();
-                        System.out.print("New Program: ");
-                        String nProg = sc.nextLine();
-                        studentService.updateStudent(id, nName, nProg);
-                    } else if (studentChoice == 4) {
-                        System.out.print("Enter ID to remove: ");
-                        String id = sc.nextLine();
-                        studentService.removeStudent(id);
-                    }
+                    try {
+                        int sAct = Integer.parseInt(sc.nextLine());
+                        if (sAct == 1) {
+                            System.out.print("Full Name: "); String n = sc.nextLine();
+                            System.out.print("Student ID: "); String id = sc.nextLine();
+                            System.out.print("Program: "); String p = sc.nextLine();
+                            studentService.addStudent(new Student(n, id, id, p));
+                        } else if (sAct == 2) studentService.displayAllStudents();
+                        else if (sAct == 3) {
+                            System.out.print("Enter ID to update: "); String id = sc.nextLine();
+                            System.out.print("New Name: "); String nn = sc.nextLine();
+                            System.out.print("New Program: "); String np = sc.nextLine();
+                            studentService.updateStudent(id, nn, np);
+                        } else if (sAct == 4) {
+                            System.out.print("Enter ID to remove: "); String id = sc.nextLine();
+                            studentService.removeStudent(id);
+                        }
+                    } catch (Exception e) { System.out.println("Invalid Action."); }
                     break;
 
                 case 2:
                     System.out.println("\n--- Instructor Management ---");
-                    System.out.println("1. Register Instructor");
-                    System.out.println("2. Display All Instructors");
-                    System.out.println("3. Update Instructor");
-                    System.out.println("4. Remove Instructor");
+                    System.out.println("1. Register Instructor\n2. Display All Instructors\n3. Update Instructor\n4. Remove Instructor");
                     System.out.print("Select Action: ");
-                    int instructorChoice = sc.nextInt();
-                    sc.nextLine();
-
-                    if (instructorChoice == 1) {
-                        System.out.print("Full Name: ");
-                        String iName = sc.nextLine();
-                        System.out.print("Employee ID: ");
-                        String eId = sc.nextLine();
-                        System.out.print("Department: ");
-                        String dept = sc.nextLine();
-                        instructorService.addInstructor(new Instructor(iName, eId, eId, dept));
-                    } else if (instructorChoice == 2) {
-                        instructorService.displayAllInstructors();
-                    } else if (instructorChoice == 3) {
-                        System.out.print("Enter ID to update: ");
-                        String id = sc.nextLine();
-                        System.out.print("New Name: ");
-                        String nName = sc.nextLine();
-                        System.out.print("New Dept: ");
-                        String nDept = sc.nextLine();
-                        instructorService.updateInstructor(id, nName, nDept);
-                    } else if (instructorChoice == 4) {
-                        System.out.print("Enter ID to remove: ");
-                        String id = sc.nextLine();
-                        instructorService.removeInstructor(id);
-                    }
+                    try {
+                        int iAct = Integer.parseInt(sc.nextLine());
+                        if (iAct == 1) {
+                            System.out.print("Full Name: "); String n = sc.nextLine();
+                            System.out.print("Instructor ID: "); String id = sc.nextLine();
+                            System.out.print("Department: "); String d = sc.nextLine();
+                            instructorService.addInstructor(new Instructor(n, id, id, d));
+                        } else if (iAct == 2) instructorService.displayAllInstructors();
+                        else if (iAct == 3) {
+                            System.out.print("Enter ID to update: "); String id = sc.nextLine();
+                            System.out.print("New Name: "); String nn = sc.nextLine();
+                            System.out.print("New Department: "); String nd = sc.nextLine();
+                            instructorService.updateInstructor(id, nn, nd);
+                        } else if (iAct == 4) {
+                            System.out.print("Enter ID to remove: "); String id = sc.nextLine();
+                            instructorService.removeInstructor(id);
+                        }
+                    } catch (Exception e) { System.out.println("Invalid Action."); }
                     break;
 
                 case 3:
                     System.out.println("\n--- Course & Section Management ---");
-                    System.out.println("1. Add Course");
-                    System.out.println("2. Display All Courses");
-                    System.out.println("3. Update Course");
-                    System.out.println("4. Remove Course");
-                    System.out.println("5. Add Section to Course");
-                    System.out.println("6. View Sections (Hierarchy)");
+                    System.out.println("1. Add Course\n2. Display All Courses\n3. Update Course\n4. Remove Course\n5. Add Section\n6. Assign Instructor\n7. View Hierarchy");
                     System.out.print("Select Action: ");
-                    int courseChoice = sc.nextInt();
-                    sc.nextLine();
-
-                    if (courseChoice == 1) {
-                        System.out.print("Course ID: ");
-                        int id = sc.nextInt();
-                        sc.nextLine();
-                        System.out.print("Course Name: ");
-                        String cName = sc.nextLine();
-                        System.out.print("Program: ");
-                        String cProg = sc.nextLine();
-                        System.out.print("Units: ");
-                        int units = sc.nextInt();
-                        courseService.addCourse(new Courses(id, cName, cProg, units));
-                    } else if (courseChoice == 2) {
-                        for (Courses c : courseService.getAllCourses()) {
-                            c.display();
-                        }
-                    } else if (courseChoice == 3) {
-                        System.out.print("ID to update: ");
-                        int id = sc.nextInt();
-                        sc.nextLine();
-                        System.out.print("New Name: ");
-                        String nName = sc.nextLine();
-                        System.out.print("New Prog: ");
-                        String nProg = sc.nextLine();
-                        System.out.print("New Units: ");
-                        int nUnits = sc.nextInt();
-                        courseService.updateCourse(new Courses(id, nName, nProg, nUnits));
-                    } else if (courseChoice == 4) {
-                        System.out.print("ID to remove: ");
-                        int id = sc.nextInt();
-                        courseService.removeCourse(id);
-                    } else if (courseChoice == 5) {
-                        System.out.print("Section Code: ");
-                        String sCode = sc.nextLine();
-                        System.out.print("Capacity: ");
-                        int cap = sc.nextInt();
-                        System.out.print("Link Course ID: ");
-                        int linkId = sc.nextInt();
-                        Courses linkedCourse = courseService.getCourseById(linkId);
-                        if (linkedCourse != null) {
-                            Section newSec = new Section(sCode, cap, linkedCourse);
-                            enrollmentService.addSection(newSec);
-                            System.out.println("Section created.");
-                        } else {
-                            System.out.println("Course not found!");
-                        }
-                    } else if (courseChoice == 6) {
-                        enrollmentService.viewDepartmentHierarchy();
-                    }
+                    try {
+                        int cAct = Integer.parseInt(sc.nextLine());
+                        if (cAct == 1) {
+                            System.out.print("Course ID: "); String id = sc.nextLine();
+                            System.out.print("Course Name: "); String n = sc.nextLine();
+                            System.out.print("Program: "); String p = sc.nextLine();
+                            System.out.print("Units: "); int u = Integer.parseInt(sc.nextLine());
+                            courseService.addCourse(new Courses(id, n, p, u));
+                        } else if (cAct == 2) {
+                            for (Courses c : courseService.getAllCourses()) c.display();
+                        } else if (cAct == 5) {
+                            System.out.print("Section Code: "); String code = sc.nextLine();
+                            System.out.print("Capacity: "); int cap = Integer.parseInt(sc.nextLine());
+                            System.out.print("Link Course ID: "); String cid = sc.nextLine();
+                            Courses c = courseService.getCourseById(cid);
+                            if (c != null) enrollmentService.addSection(new Section(code, cap, c));
+                        } else if (cAct == 6) {
+                            System.out.print("Enter Instructor ID: "); String iid = sc.nextLine();
+                            System.out.print("Enter Section Code: "); String scode = sc.nextLine();
+                            Instructor inst = instructorService.getInstructorById(iid);
+                            Section sect = null;
+                            if (enrollmentService instanceof EnrollmentServiceImpl) {
+                                sect = ((EnrollmentServiceImpl) enrollmentService).getSectionByCode(scode);
+                            }
+                            if (inst != null && sect != null) {
+                                sect.setInstructor(inst);
+                                System.out.println("Instructor successfully assigned to section.");
+                            } else System.out.println("Instructor or Section not found.");
+                        } else if (cAct == 7) enrollmentService.viewDepartmentHierarchy();
+                    } catch (Exception e) { System.out.println("Error in processing input."); }
                     break;
 
                 case 4:
-                    System.out.println("\n--- Tuition Fee Management ---");
-                    sc.nextLine();
-                    System.out.print("Student ID: ");
-                    String sIdSearch = sc.nextLine();
-                    Student fStudent = studentService.getStudentById(sIdSearch);
-                    if (fStudent != null) {
+                    System.out.print("Enter Student ID: ");
+                    String sid = sc.nextLine();
+                    Student s = studentService.getStudentById(sid);
+                    if (s != null) {
                         System.out.println("1. Calculate Tuition\n2. Make Payment\n3. Check Balance");
-                        int tAct = sc.nextInt();
-                        if (tAct == 1) {
-                            System.out.println("Total: PHP " + tuitionService.calculateFee(fStudent));
-                        } else if (tAct == 2) {
-                            System.out.print("Amount: ");
-                            tuitionService.makePayment(fStudent, sc.nextDouble());
-                        } else if (tAct == 3) {
-                            System.out.println("Balance: PHP " + tuitionService.getRemainingBalance(fStudent));
-                        }
+                        try {
+                            int tAct = Integer.parseInt(sc.nextLine());
+                            if (tAct == 1) System.out.println("Total Tuition Fee: " + tuitionService.calculateFee(s));
+                            else if (tAct == 2) {
+                                System.out.print("Enter Amount to Pay: ");
+                                tuitionService.makePayment(s, Double.parseDouble(sc.nextLine()));
+                            } else if (tAct == 3) System.out.println("Remaining Balance: " + tuitionService.getRemainingBalance(s));
+                        } catch (Exception e) { System.out.println("Invalid amount or input."); }
+                    } else {
+                        System.out.println("Student not found.");
                     }
                     break;
 
                 case 5:
-                    System.out.println("\n--- Enrollment ---");
-                    sc.nextLine();
-                    System.out.print("Student ID: ");
-                    String stId = sc.nextLine();
-                    System.out.print("Section Code: ");
-                    String seCode = sc.nextLine();
-                    Student stud = studentService.getStudentById(stId);
+                    System.out.println("\n--- Student Enrollment ---");
+                    System.out.print("Enter Student ID: "); String stid = sc.nextLine();
+                    System.out.print("Enter Section Code: "); String secc = sc.nextLine();
+                    Student stu = studentService.getStudentById(stid);
                     Section sec = null;
                     if (enrollmentService instanceof EnrollmentServiceImpl) {
-                        sec = ((EnrollmentServiceImpl) enrollmentService).getSectionByCode(seCode);
+                        sec = ((EnrollmentServiceImpl) enrollmentService).getSectionByCode(secc);
                     }
-                    if (stud != null && sec != null) {
-                        enrollmentService.enrollStudentInSection(stud, sec);
-                    } else {
-                        System.out.println("Error in ID or Code.");
-                    }
+                    if (stu != null && sec != null) enrollmentService.enrollStudentInSection(stu, sec);
+                    else System.out.println("Enrollment failed: Invalid Student ID or Section Code.");
                     break;
 
                 case 0:
@@ -212,7 +159,8 @@ public class Main {
                     break;
 
                 default:
-                    System.out.println("Invalid.");
+                    System.out.println("Invalid selection.");
+                    break;
             }
         }
         sc.close();

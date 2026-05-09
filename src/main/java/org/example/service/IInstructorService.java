@@ -1,10 +1,12 @@
 package org.example.service;
 
 import org.example.model.Instructor;
+import java.util.List;
 
 public interface IInstructorService {
     void addInstructor(Instructor instructor);
     void displayAllInstructors();
-    void updateInstructor(String instructorId, String newName, String newDept);
-    void removeInstructor(String instructorId);
+    void updateInstructor(String id, String name, String dept);
+    void removeInstructor(String id);
+    Instructor getInstructorById(String id);
 }

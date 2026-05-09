@@ -45,4 +45,14 @@ public class InstructorServiceImpl implements IInstructorService {
             System.out.println("Instructor with ID " + instructorId + " not found.");
         }
     }
+
+    @Override
+    public Instructor getInstructorById(String instructorId) {
+        for (Instructor i : Database.instructors) {
+            if (i.getPersonID().equalsIgnoreCase(instructorId)) {
+                return i;
+            }
+        }
+        return null;
+    }
 }

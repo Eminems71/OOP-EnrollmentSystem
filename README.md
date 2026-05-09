@@ -2,6 +2,10 @@
 Author: Redel Aguila
 
 ---
+
+
+
+
 ## **Encapsulation**
 ![Redel.png](src/main/resources/images/Redel.png)
 

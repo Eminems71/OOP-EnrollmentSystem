@@ -16,14 +16,11 @@ public class EnrollmentServiceImpl implements IEnrollmentService {
     @Override
     public void enrollStudentInSection(Student student, Section section) {
         if (section.getEnrolledStudents().size() < section.getMaxCapacity()) {
-
             section.getEnrolledStudents().add(student);
-
             student.getEnrolledCourses().add(section.getCourse());
-
             System.out.println("Success: " + student.getPersonName() + " enrolled in " + section.getSectionCode());
         } else {
-            System.out.println("ERROR: Section " + section.getSectionCode() + " is FULL! Enrollment rejected.");
+            System.out.println("ERROR: Section " + section.getSectionCode() + " is FULL!");
         }
     }
 
@@ -39,6 +36,7 @@ public class EnrollmentServiceImpl implements IEnrollmentService {
             System.out.println("---------------------------------------------");
         }
     }
+
 
     public Section getSectionByCode(String code) {
         for (Section sec : sections) {

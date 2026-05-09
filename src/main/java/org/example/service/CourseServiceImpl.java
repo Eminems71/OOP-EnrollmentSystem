@@ -15,7 +15,7 @@ public class CourseServiceImpl implements ICourseService {
     @Override
     public void updateCourse(Courses updatedCourse) {
         for (int i = 0; i < courses.size(); i++) {
-            if (courses.get(i).getCourseID() == updatedCourse.getCourseID()) {
+            if (courses.get(i).getCourseID().equals(updatedCourse.getCourseID())) {
                 courses.set(i, updatedCourse);
                 return;
             }
@@ -23,8 +23,8 @@ public class CourseServiceImpl implements ICourseService {
     }
 
     @Override
-    public void removeCourse(int courseID) {
-        courses.removeIf(course -> course.getCourseID() == courseID);
+    public void removeCourse(String courseID) {
+        courses.removeIf(course -> course.getCourseID().equals(courseID));
     }
 
     @Override
@@ -33,9 +33,9 @@ public class CourseServiceImpl implements ICourseService {
     }
 
     @Override
-    public Courses getCourseById(int courseID) {
+    public Courses getCourseById(String courseID) {
         for (Courses course : courses) {
-            if (course.getCourseID() == courseID) {
+            if (course.getCourseID().equalsIgnoreCase(courseID)) {
                 return course;
             }
         }
