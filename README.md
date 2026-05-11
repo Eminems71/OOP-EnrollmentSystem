@@ -119,7 +119,7 @@ TuitionFeePaymentTest
 ![TuitionFeePaymentTest.png](target/classes/images/TuitionFeePaymentTest.png)
 
 
-JUnitTesting
+JUnitTestings
 ![JUnitTesting.png](target/classes/images/JUnitTesting.png)
 
 
