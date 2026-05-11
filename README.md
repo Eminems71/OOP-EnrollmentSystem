@@ -42,7 +42,7 @@ To ensure the system is production-ready, I implemented a suite of Automated Uni
 ![PERSON.java.png](src/main/resources/images/PERSON.java.png)
 ![STUDENT.java.png](src/main/resources/images/STUDENT.java.png)
 
-## **FINALS**
+## **FINALS.**
 
 ## model
 Courses
