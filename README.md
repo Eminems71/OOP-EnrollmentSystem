@@ -3,7 +3,7 @@ Author: Redel Aguila
 
 ---
 
-Project Vision and Architectural Thinking
+Project Vision and Archi![IInstructorService.png](src/main/resources/images/IInstructorService.png)tectural Thinking
 
 This project represents a transition from basic procedural coding to a Modular Software Architecture. The Enrollment System is built on a Service-Oriented structure where data models are strictly separated from business logic services. This decoupling ensures that the system is scalable, organized, and easy to maintain, mirroring how professional enterprise applications are built.
 
@@ -35,7 +35,7 @@ To ensure the system is production-ready, I implemented a suite of Automated Uni
 ![Redel.png](src/main/resources/images/Redel.png)
 
 ## **Inheritance**
-![SS - EM.png](src/main/resources/images/SS - EM.png)
+![SS - EM.png](src/main/resources/images/SS%20-%20EM.png)
 
 ## **Abstract**
 ![INSTRUCTOR.java.png](src/main/resources/images/INSTRUCTOR.java.png)
@@ -46,82 +46,80 @@ To ensure the system is production-ready, I implemented a suite of Automated Uni
 
 ## model
 Courses
-![Courses.png](target/classes/images/Courses.png)
+![Courses.png](src/main/resources/images/Courses.png)
 
 Database
-![Database.png](target/classes/images/Database.png)
+![Database.png](src/main/resources/images/Database.png)
 
 Department
-![Department.png](target/classes/images/Department.png)
+![Department.png](src/main/resources/images/Department.png)
 
 Instructor
-![Instructor.png](target/classes/images/Instructor.png)
+![Instructor.png](src/main/resources/images/Instructor.png)
 
 Person
-![Person.png](target/classes/images/Person.png)
+![Person.png](src/main/resources/images/Person.png)
 
 Section
-![Section.png](target/classes/images/Section.png)
+![Section.png](src/main/resources/images/Section.png)
 
 Student
-![Student.png](target/classes/images/Student.png)
+![Student.png](src/main/resources/images/Student.png)
 
 TuitionFeePayment
-![TuitionFeePayment.png](target/classes/images/TuitionFeePayment.png)
+![TuitionFeePayment.png](src/main/resources/images/TuitionFeePayment.png)
 
 ## service
 
 ICourseService
-![ICourseService.png](target/classes/images/ICourseService.png)
+![ICourseService.png](src/main/resources/images/ICourseService.png)
 
 IEnrollmentService
-![IEnrollmentService.png](target/classes/images/IEnrollmentService.png)
+![IEnrollmentService.png](src/main/resources/images/IEnrollmentService.png)
 
 IInstructorService
-![IInstructorService.png](target/classes/images/IInstructorService.png)
+![IInstructorService.png](src/main/resources/images/IInstructorService.png)
 
 IStudentService
-![IStudentService.png](target/classes/images/IStudentService.png)
+![IStudentService.png](src/main/resources/images/IStudentService.png)
 
 ITuitionService
-![ITuitionService.png](target/classes/images/ITuitionService.png)
+![ITuitionService.png](src/main/resources/images/ITuitionService.png)
 
 EnrollmentServiceImpl
-![EnrollmentServiceImpl.png](target/classes/images/EnrollmentServiceImpl.png)
+![EnrollmentServiceImpl.png](src/main/resources/images/EnrollmentServiceImpl.png)
 
 TuitionServiceImpl
-![TuitionServiceImpl.png](target/classes/images/TuitionServiceImpl.png)
+![TuitionServiceImpl.png](src/main/resources/images/TuitionServiceImpl.png)
 
 CourseServiceImpl
-![CourseServiceImpl.png](target/classes/images/CourseServiceImpl.png)
+![CourseServiceImpl.png](src/main/resources/images/CourseServiceImpl.png)
 
 InstructorServiceImpl
-![InstructorServiceImpl.png](target/classes/images/InstructorServiceImpl.png)
+![InstructorServiceImpl.png](src/main/resources/images/InstructorServiceImpl.png)
 
 StudentServiceImpl
-![StudentServiceImpl.png](target/classes/images/StudentServiceImpl.png)
+![StudentServiceImpl.png](src/main/resources/images/StudentServiceImpl.png)
 
 ## test
 
 CourseRegistrationTest
-![CourseRegistrationTest.png](target/classes/images/CourseRegistrationTest.png)
+![CourseRegistrationTest.png](src/main/resources/images/CourseRegistrationTest.png)
 
 EnrollmentServiceTest
-![EnrollmentServiceTest'.png](target/classes/images/EnrollmentServiceTest%27.png)
+![EnrollmentServiceTest'.png](src/main/resources/images/EnrollmentServiceTest%27.png)
 
 InstructorServiceTest
-![InstructorServiceTest.png](target/classes/images/InstructorServiceTest.png)
+![InstructorServiceTest.png](src/main/resources/images/InstructorServiceTest.png)
 
 StudentRegistrationTest
-![StudentRegistrationTest.png](target/classes/images/StudentRegistrationTest.png)
+![StudentRegistrationTest.png](src/main/resources/images/StudentRegistrationTest.png)
 
 TuitionFeePaymentTest
-![TuitionFeePaymentTest.png](target/classes/images/TuitionFeePaymentTest.png)
-
+![TuitionFeePaymentTest.png](src/main/resources/images/TuitionFeePaymentTest.png)
 
 JUnitTestings
-![JUnitTesting.png](target/classes/images/JUnitTesting.png)
-
+![JUnitTesting.png](src/main/resources/images/JUnitTesting.png)
 
 Main
-![Main.png](target/classes/images/Main.png)
+![Main.png](src/main/resources/images/Main.png)
