@@ -3,7 +3,7 @@ Author: Redel Aguila
 
 ---
 
-Project Vision and Archi![IInstructorService.png](src/main/resources/images/IInstructorService.png)tectural Thinking
+Project Vision and Architectural Thinking
 
 This project represents a transition from basic procedural coding to a Modular Software Architecture. The Enrollment System is built on a Service-Oriented structure where data models are strictly separated from business logic services. This decoupling ensures that the system is scalable, organized, and easy to maintain, mirroring how professional enterprise applications are built.
 
