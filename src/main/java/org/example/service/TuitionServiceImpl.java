@@ -12,8 +12,10 @@ public class TuitionServiceImpl implements ITuitionService {
     @Override
     public double calculateFee(Student student) {
         int totalUnits = 0;
-        for (Courses course : student.getEnrolledCourses()) {
-            totalUnits += course.getUnits();
+        if (student.getEnrolledCourses() != null) {
+            for (Courses course : student.getEnrolledCourses()) {
+                totalUnits += course.getUnits();
+            }
         }
         return totalUnits * RATE_PER_UNIT;
     }

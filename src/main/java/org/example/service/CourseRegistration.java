@@ -1,14 +1,18 @@
 package org.example.service;
 import org.example.model.Courses;
 import java.util.ArrayList;
-
+import java.util.List; // Dagdag mo 'to
 
 public class CourseRegistration {
-    private ArrayList<Courses> courseList = new ArrayList();
+    private ArrayList<Courses> courseList = new ArrayList<>();
+
+    // DAGDAG MO ITONG METHOD NA ITO PARA SA TESTING
+    public List<Courses> getCourseList() {
+        return courseList;
+    }
 
     public void saveCourse(Courses course) {
         courseList.add(course);
-
     }
 
     public void displayAllCourse() {
@@ -28,17 +32,12 @@ public class CourseRegistration {
         }
     }
 
-    public void removeCourse(Courses course){
-    for(int i = 0; i < courseList.size(); i++) {
-        if (courseList.get(i).getCourseName().equals(course.getCourseName())) {
-            courseList.remove(i);
-            break;
+    public void removeCourse(Courses course) {
+        for (int i = 0; i < courseList.size(); i++) {
+            if (courseList.get(i).getCourseName().equals(course.getCourseName())) {
+                courseList.remove(i);
+                break;
+            }
         }
-
-      }
     }
 }
-
-
-
-

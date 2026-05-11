@@ -26,7 +26,7 @@ public class Section {
     public Instructor getInstructor() { return instructor; }
     public void setInstructor(Instructor instructor) { this.instructor = instructor; }
 
-    public List<Student> getEnrolledStudents() { return enrolledStudents; }
+    public List<Student> getEnrolledStudents(int i) { return enrolledStudents; }
 
     public Courses getCourse() { return course; }
     public void setCourse(Courses course) { this.course = course; }

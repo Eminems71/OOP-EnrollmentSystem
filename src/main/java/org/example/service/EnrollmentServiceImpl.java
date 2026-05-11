@@ -15,8 +15,8 @@ public class EnrollmentServiceImpl implements IEnrollmentService {
 
     @Override
     public void enrollStudentInSection(Student student, Section section) {
-        if (section.getEnrolledStudents().size() < section.getMaxCapacity()) {
-            section.getEnrolledStudents().add(student);
+        if (section.getEnrolledStudents(1).size() < section.getMaxCapacity()) {
+            section.getEnrolledStudents(1).add(student);
             student.getEnrolledCourses().add(section.getCourse());
             System.out.println("Success: " + student.getPersonName() + " enrolled in " + section.getSectionCode());
         } else {
@@ -26,18 +26,14 @@ public class EnrollmentServiceImpl implements IEnrollmentService {
 
     @Override
     public void viewDepartmentHierarchy() {
-        System.out.println("\n--- Institutional Hierarchy: College of Computer Studies ---");
-        if (sections.isEmpty()) {
-            System.out.println("No sections created yet.");
-            return;
-        }
+        System.out.println("\n--- Institutional Hierarchy: CICS ---");
         for (Section sec : sections) {
             sec.displaySectionDetails();
             System.out.println("---------------------------------------------");
         }
     }
 
-
+    @Override
     public Section getSectionByCode(String code) {
         for (Section sec : sections) {
             if (sec.getSectionCode().equalsIgnoreCase(code)) {
@@ -45,5 +41,9 @@ public class EnrollmentServiceImpl implements IEnrollmentService {
             }
         }
         return null;
+    }
+
+    public List<Section> getSections() {
+        return sections;
     }
 }
