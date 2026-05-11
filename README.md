@@ -6,7 +6,7 @@ Author: Redel Aguila
 ![Redel.png](src/main/resources/images/Redel.png)
 
 ## **Inheritance**
-![SS - EM.png](src/main/resources/images/SS - EM.png)
+![SS-EM.png](src/main/resources/images/SS-EM.png)
 
 ## **Abstract**
 ![INSTRUCTOR.java.png](src/main/resources/images/INSTRUCTOR.java.png)
