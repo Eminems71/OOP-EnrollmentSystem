@@ -22,10 +22,10 @@ public class CourseRegistrationTest {
     @Test
     @DisplayName("Should successfully save a course")
     void testSaveCourse() {
-        // Action
+
         registration.saveCourse(sampleCourse);
 
-        // Verification: Dahil private ang list, tinitignan natin kung walang error pagka-add
+
         assertDoesNotThrow(() -> registration.displayAllCourse(),
                 "Should not throw exception when displaying added course");
     }
