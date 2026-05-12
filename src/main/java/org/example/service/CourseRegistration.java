@@ -1,12 +1,12 @@
 package org.example.service;
 import org.example.model.Courses;
 import java.util.ArrayList;
-import java.util.List; // Dagdag mo 'to
+import java.util.List;
 
 public class CourseRegistration {
     private ArrayList<Courses> courseList = new ArrayList<>();
 
-    // DAGDAG MO ITONG METHOD NA ITO PARA SA TESTING
+
     public List<Courses> getCourseList() {
         return courseList;
     }
