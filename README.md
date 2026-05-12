@@ -104,7 +104,7 @@ StudentServiceImpl
 ## test
 
 CourseRegistrationTest
-![COURSEREGISTRATIONTEST.png](src/main/resources/images/COURSEREGISTRATIONTEST.png)
+![CourseRegistrationTest.png](src/main/resources/images/CourseRegistrationTest.png)
 
 EnrollmentServiceTest
 ![EnrollmentServiceTest'.png](src/main/resources/images/EnrollmentServiceTest%27.png)
